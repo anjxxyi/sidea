@@ -1,0 +1,71 @@
+/* Design tokens. Components read these; nothing else defines color, type or spacing. */
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../assets/fonts/mona-sans-latin-wdth.woff2') format('woff2');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: block;
+}
+
+:root {
+  /* palette */
+  --paper: #fbfbfb;
+  --ink: #262626;
+  --orange: #e5480e;
+  --sky: #8ed2ff;
+
+  /* type */
+  --display: 'Mona Sans', 'Pretendard Variable', system-ui, sans-serif;
+  --body: 'Mona Sans', 'Pretendard Variable', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --t-label: 12px;
+  --t-small: 14px;
+  --t-body: clamp(16px, 1.1vw, 18px);
+  --t-lead: clamp(18px, 1.5vw, 22px);
+  --t-h3: clamp(28px, 2.6vw, 40px);
+  --t-h2: clamp(30px, 3.4vw, 48px);
+
+  /* spacing — 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128 */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+  --s9: 96px;
+  --s10: 128px;
+  --gut: clamp(24px, 6vw, 96px);
+
+  /* motion */
+  --ease: cubic-bezier(0.65, 0, 0.25, 1);
+  --spring: cubic-bezier(0.34, 1.4, 0.5, 1);
+}
+
+/* Dark is the default; the point color flips with the theme. */
+[data-theme='dark'] {
+  --bg: var(--ink);
+  --fg: var(--paper);
+  --pt: var(--sky);
+  --mute: rgb(251 251 251 / 0.56);
+  --line: rgb(251 251 251 / 0.12);
+  --card2: #30363b;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --pt: var(--orange);
+  --mute: rgb(38 38 38 / 0.56);
+  --line: rgb(38 38 38 / 0.12);
+  --card2: #f4e6df;
+  color-scheme: light;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --t-label: 11px;
+  }
+}

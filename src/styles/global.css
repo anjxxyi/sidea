@@ -1,0 +1,125 @@
+/* Korean text: Pretendard, loaded per unicode range. Latin stays on Mona Sans. */
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: var(--t-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--pt);
+  color: var(--ink);
+}
+
+button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pt);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* <main> slides over the fixed footer. */
+main {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 100vh;
+  margin-bottom: 100svh;
+  border-radius: 0 0 96px 96px;
+  background: var(--bg);
+  box-shadow: 0 30px 60px rgb(0 0 0 / 0.25);
+}
+
+@media (max-width: 760px) {
+  main {
+    border-radius: 0 0 48px 48px;
+  }
+}
+
+/* utilities */
+
+.label {
+  font-family: var(--display);
+  font-size: var(--t-label);
+  line-height: 1.2;
+  font-variation-settings:
+    'wdth' 80,
+    'wght' 560;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  color: var(--pt);
+}
+
+.mute {
+  color: var(--mute);
+}
+
+.h2 {
+  font-family: var(--display);
+  font-size: var(--t-h2);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-variation-settings:
+    'wdth' 100,
+    'wght' 700;
+  text-wrap: balance;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Theme switch spreads as a circle (see PrefsContext). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Motion off stops content motion. The header keeps its own UI transitions. */
+.no-motion main *,
+.no-motion main *::before,
+.no-motion main *::after,
+.no-motion footer *,
+.no-motion footer *::before,
+.no-motion footer *::after {
+  transition-duration: 0s !important;
+}
