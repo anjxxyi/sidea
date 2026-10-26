@@ -1,3 +1,9 @@
+import { PrefsProvider } from '@/context/PrefsContext';
+
 export function App() {
-  return <main />;
+  return (
+    <PrefsProvider>
+      <main />
+    </PrefsProvider>
+  );
 }
