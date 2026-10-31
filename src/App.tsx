@@ -3,6 +3,7 @@ import { PrefsProvider } from '@/context/PrefsContext';
 import { FramePriority, subscribeFrame } from '@/lib/frameLoop';
 import { updateLens } from '@/lib/lens';
 import { initPointer } from '@/lib/pointer';
+import { Hero } from '@/sections/Hero';
 
 export function App() {
   useEffect(() => {
@@ -12,7 +13,9 @@ export function App() {
 
   return (
     <PrefsProvider>
-      <main />
+      <main>
+        <Hero />
+      </main>
     </PrefsProvider>
   );
 }
