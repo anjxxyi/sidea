@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Header } from '@/components/Header';
 import { PrefsProvider } from '@/context/PrefsContext';
 import { FramePriority, subscribeFrame } from '@/lib/frameLoop';
 import { updateLens } from '@/lib/lens';
@@ -13,6 +14,7 @@ export function App() {
 
   return (
     <PrefsProvider>
+      <Header />
       <main>
         <Hero />
       </main>

@@ -1,0 +1,63 @@
+/* One centered pill. On scroll only the side padding tightens; type size stays. */
+.header {
+  position: fixed;
+  top: var(--s4);
+  left: 50%;
+  z-index: 50;
+  transform: translateX(-50%);
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 12px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--fg) 10%, color-mix(in srgb, var(--bg) 35%, transparent));
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  white-space: nowrap;
+  transition: padding 0.5s var(--ease);
+}
+
+.seg {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--mute);
+  transition:
+    background 0.25s,
+    color 0.25s,
+    padding 0.5s var(--ease);
+}
+
+.seg:hover:not(.on) {
+  color: var(--fg);
+}
+
+.on {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.brand {
+  margin-right: var(--s2);
+}
+
+.symbol {
+  height: 20px;
+  width: auto;
+}
+
+.header[data-compact='true'] .pill {
+  padding: 4px;
+}
+
+.header[data-compact='true'] .seg {
+  padding: 0 9px;
+}
