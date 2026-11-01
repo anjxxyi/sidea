@@ -1,0 +1,39 @@
+.hero,
+.host {
+  height: 100vh;
+  height: 100svh;
+  min-height: 520px;
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mark {
+  width: min(92vw, 170vh);
+  height: auto;
+  overflow: visible;
+}
+
+.tagline {
+  position: absolute;
+  left: var(--gut);
+  right: var(--gut);
+  bottom: calc(84px + env(safe-area-inset-bottom));
+  text-align: center;
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  color: var(--mute);
+}
+
+.cue {
+  position: absolute;
+  bottom: calc(var(--s6) + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--mute);
+}
