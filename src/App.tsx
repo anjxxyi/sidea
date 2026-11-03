@@ -5,6 +5,7 @@ import { FramePriority, subscribeFrame } from '@/lib/frameLoop';
 import { updateLens } from '@/lib/lens';
 import { initPointer } from '@/lib/pointer';
 import { Hero } from '@/sections/Hero';
+import { Statement } from '@/sections/Statement';
 
 export function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ export function App() {
       <Header />
       <main>
         <Hero />
+        <Statement />
       </main>
     </PrefsProvider>
   );
