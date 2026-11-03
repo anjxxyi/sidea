@@ -76,7 +76,8 @@ export function Statement() {
 
   return (
     <section ref={section} className={styles.statement} aria-label="About sidea">
-      <LensHost className={styles.sticky}>
+      <div className={styles.sticky}>
+        <LensHost className={styles.fill}>
           {(layer) => (
             <div className={styles.inner}>
               <Text copy={copy.aboutLabel} as="p" className="label eyebrow" />
@@ -108,6 +109,7 @@ export function Statement() {
             </div>
           )}
         </LensHost>
+      </div>
     </section>
   );
 }
