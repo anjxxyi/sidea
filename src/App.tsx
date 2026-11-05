@@ -5,6 +5,7 @@ import { FramePriority, subscribeFrame } from '@/lib/frameLoop';
 import { updateLens } from '@/lib/lens';
 import { initPointer } from '@/lib/pointer';
 import { Hero } from '@/sections/Hero';
+import { Programs } from '@/sections/Programs';
 import { Statement } from '@/sections/Statement';
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
       <main>
         <Hero />
         <Statement />
+        <Programs />
       </main>
     </PrefsProvider>
   );

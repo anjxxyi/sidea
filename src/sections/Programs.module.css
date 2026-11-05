@@ -1,0 +1,78 @@
+.programs {
+  height: 600vh;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+}
+
+.fill {
+  height: 100%;
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.head {
+  position: absolute;
+  top: 116px;
+  left: var(--gut);
+  right: var(--gut);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.item {
+  position: absolute;
+  top: 54%;
+  left: 0;
+  will-change: transform;
+}
+
+.mark {
+  display: block;
+  height: var(--h, 40vh);
+  width: auto;
+  overflow: visible;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--s3);
+  margin-top: var(--s5);
+  will-change: opacity, transform;
+}
+
+.desc {
+  font-size: var(--t-lead);
+  line-height: 1.3;
+  font-variation-settings:
+    'wdth' 100,
+    'wght' 450;
+}
+
+.soon {
+  color: var(--pt);
+}
+
+.count {
+  position: absolute;
+  right: var(--gut);
+  bottom: calc(var(--s6) + env(safe-area-inset-bottom));
+  color: var(--mute);
+}
+
+@media (max-width: 760px) {
+  .head {
+    top: 88px;
+  }
+}
