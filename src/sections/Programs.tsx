@@ -52,14 +52,14 @@ export function Programs() {
     if (r.top > vh || r.bottom < 0) return;
     const progress = clamp(-r.top / (r.height - vh));
 
-    // Keyframes: enter → each lockup → exit.
+    // Keyframes: enter → hold at each lockup → exit. Holds weigh a little more than travel.
     const stop = (i: number) => vw / 2 - (geo[i].x + geo[i].mid);
     const keys = [
       stop(0) + vw * 0.75,
-      ...geo.map((_, i) => stop(i)),
+      ...geo.flatMap((_, i) => [stop(i), stop(i)]),
       stop(geo.length - 1) - vw * 0.75,
     ];
-    const weights = keys.slice(1).map(() => 1);
+    const weights = keys.slice(1).map((k, i) => (k === keys[i] ? 1.1 : 1));
     const total = weights.reduce((a, b) => a + b, 0);
     let acc = 0;
     let tx = keys[keys.length - 1];
