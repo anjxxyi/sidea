@@ -42,14 +42,14 @@ const DOCS: Doc[] = [
     title: 'Flows',
     meta: '12 screens · 3 paths',
     body: (
-      <svg className={styles.diagram} viewBox="0 0 240 140" aria-hidden="true">
+      <svg className={styles.diagram} viewBox="0 0 240 134" aria-hidden="true">
         <rect x="8" y="14" width="54" height="30" rx="6" />
         <rect x="93" y="14" width="54" height="30" rx="6" className={styles.on} />
         <rect x="178" y="14" width="54" height="30" rx="6" />
-        <rect x="93" y="96" width="54" height="30" rx="6" />
-        <rect x="178" y="96" width="54" height="30" rx="6" />
-        <path d="M69 29h17M154 29h17M120 51v38M154 111h17" />
-        <path d="M82 25l4 4-4 4M167 25l4 4-4 4M116 85l4 4 4-4M167 107l4 4-4 4" />
+        <rect x="93" y="90" width="54" height="30" rx="6" />
+        <rect x="178" y="90" width="54" height="30" rx="6" />
+        <path d="M69 29h17M154 29h17M120 51v32M154 105h17" />
+        <path d="M82 25l4 4-4 4M167 25l4 4-4 4M116 79l4 4 4-4M167 101l4 4-4 4" />
       </svg>
     ),
   },
