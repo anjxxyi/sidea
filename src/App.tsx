@@ -5,6 +5,7 @@ import { ToastProvider } from '@/context/ToastContext';
 import { FramePriority, subscribeFrame } from '@/lib/frameLoop';
 import { updateLens } from '@/lib/lens';
 import { initPointer } from '@/lib/pointer';
+import { Footer } from '@/sections/Footer';
 import { Hero } from '@/sections/Hero';
 import { Now } from '@/sections/Now';
 import { Programs } from '@/sections/Programs';
@@ -26,6 +27,7 @@ export function App() {
           <Programs />
           <Now />
         </main>
+        <Footer />
       </ToastProvider>
     </PrefsProvider>
   );
