@@ -5,6 +5,7 @@ import { Lockup } from '@/components/Lockup';
 import { Text } from '@/components/Text';
 import { usePrefs } from '@/context/PrefsContext';
 import { useToast } from '@/context/ToastContext';
+import { useFrame } from '@/hooks/useFrame';
 import { lettering as L, type BracketWord, wordSpan } from '@/lib/lettering';
 import { openState } from '@/lib/lockup';
 import { easeOutBack } from '@/lib/math';
@@ -14,6 +15,7 @@ import styles from './Footer.module.css';
 
 const WORDS: BracketWord[] = ['fter', 'ngle', 'rchive', 'telier', 'rtifact', 'bout', 'board'];
 const VIEW_W = (Math.max(...WORDS.map((w) => L.W[w].close)) + 20 + L.delta).toFixed(0);
+const AUTO_MS = 2600;
 
 /** Sits under the page and is revealed as <main> scrolls away. Always the inverted theme. */
 export function Footer() {
@@ -57,6 +59,15 @@ export function Footer() {
     };
   }, []);
 
+  // When idle near the bottom of the page, cycle on its own.
+  useFrame((now) => {
+    if (!runtime.motion || now - lastInput.current < AUTO_MS) return;
+    const nearEnd =
+      scrollY + innerHeight > document.documentElement.scrollHeight - innerHeight * 1.2;
+    if (!nearEnd) return;
+    lastInput.current = now;
+    show((index.current + 1) % WORDS.length);
+  });
 
   const copyMail = async () => {
     try {
