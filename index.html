@@ -3,10 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>sidea</title>
+    <title>sidea — Ideas, on the side.</title>
+    <meta
+      name="description"
+      content="sidea is two people working on ideas on the side. Side by side. Idea by idea."
+    />
+    <link rel="canonical" href="__SITE_URL__/" />
+
+    <meta name="theme-color" content="#262626" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FBFBFB" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="sidea" />
+    <meta property="og:title" content="sidea — Ideas, on the side." />
+    <meta property="og:description" content="Side by side. Idea by idea." />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The sidea lettering above the line “Ideas, on the side.”"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sidea — Ideas, on the side." />
+    <meta name="twitter:description" content="Side by side. Idea by idea." />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "sidea",
+        "url": "__SITE_URL__/",
+        "logo": "__SITE_URL__/icon-512.png",
+        "slogan": "Ideas, on the side."
+      }
+    </script>
   </head>
   <body data-theme="dark">
-    <div id="root"></div>
+    <!-- Static content for crawlers and no-JS visitors. React replaces it on load. -->
+    <div id="root">
+      <main>
+        <h1>sidea — Ideas, on the side.</h1>
+        <p>Side by side. Idea by idea.</p>
+        <h2>On the side</h2>
+        <ul>
+          <li>sidea(fter) — After work</li>
+          <li>sidea(ngle) — How we see things</li>
+          <li>sidea(rchive) — Looking back on our work</li>
+          <li>sidea(telier) — Our workspace</li>
+        </ul>
+        <h2>Now</h2>
+        <p>Project 01 — in progress since Nov 2026</p>
+        <p>__CONTACT_EMAIL__</p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
