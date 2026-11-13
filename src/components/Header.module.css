@@ -61,3 +61,31 @@
 .header[data-compact='true'] .seg {
   padding: 0 9px;
 }
+
+@media (max-width: 760px) {
+  .header {
+    top: calc(10px + env(safe-area-inset-top));
+  }
+  .pill {
+    padding: 3px 6px;
+    border-radius: 14px;
+  }
+  .seg {
+    height: 30px;
+    padding: 0 10px;
+    font-size: 12.5px;
+    border-radius: 10px;
+  }
+  .brand {
+    margin-right: var(--s1);
+  }
+  .symbol {
+    height: 17px;
+  }
+  .header[data-compact='true'] .pill {
+    padding: 3px;
+  }
+  .header[data-compact='true'] .seg {
+    padding: 0 8px;
+  }
+}

@@ -273,3 +273,36 @@
     --dw: min(220px, 28vw);
   }
 }
+
+@media (max-width: 760px) {
+  .grid {
+    gap: var(--s6);
+  }
+
+  .title {
+    margin-top: var(--s4);
+  }
+
+  .doc {
+    --dw: 40vw;
+    padding: var(--s3);
+    border-radius: 12px;
+  }
+
+  .docTitle {
+    font-size: 26px;
+  }
+
+  .body {
+    font-size: 10.5px;
+  }
+
+  .toc,
+  .note {
+    padding: 5px 0;
+  }
+
+  .note {
+    grid-template-columns: 32px 1fr;
+  }
+}
