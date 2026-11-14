@@ -16,4 +16,9 @@ export default tseslint.config(
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
+  {
+    // Providers export their hook next to the component on purpose.
+    files: ['src/context/**/*.tsx'],
+    rules: { 'react-refresh/only-export-components': 'off' },
+  },
 );
