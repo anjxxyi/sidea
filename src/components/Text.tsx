@@ -24,7 +24,7 @@ export function Text({ copy, as: Tag = 'span', className }: TextProps) {
 
   return (
     <Tag ref={ref as never} className={className} style={{ whiteSpace: 'pre-line' }}>
-      {copy.en}
+      {copy[lang]}
     </Tag>
   );
 }

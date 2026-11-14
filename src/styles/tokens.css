@@ -43,7 +43,7 @@
   --spring: cubic-bezier(0.34, 1.4, 0.5, 1);
 }
 
-/* Dark is the default; the point color flips with the theme. */
+/* The point color flips with the selected theme. */
 [data-theme='dark'] {
   --bg: var(--ink);
   --fg: var(--paper);

@@ -28,6 +28,7 @@ npm run dev
 | `npm run build`     | Type-check and build to `dist/` |
 | `npm run preview`   | Serve the production build      |
 | `npm run lint`      | ESLint                          |
+| `npm test`          | Preference regression tests     |
 | `npm run format`    | Prettier                        |
 | `npm run typecheck` | TypeScript only                 |
 
@@ -39,6 +40,8 @@ npm run dev
 | `VITE_CONTACT_EMAIL` | Contact address in the footer and fallback markup |
 
 Both are read at build time. Set the same values in your hosting provider.
+
+First visits start in light mode and English. Theme and language choices are saved in the browser and restored before the page renders on later visits.
 
 ## Structure
 
