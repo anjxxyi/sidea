@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import { runtime, type Lang, type Theme } from '@/lib/runtime';
+import { savePreference } from '@/lib/preferences';
 
 type Prefs = {
   theme: Theme;
@@ -21,19 +22,24 @@ type Prefs = {
 const PrefsContext = createContext<Prefs | null>(null);
 
 export function PrefsProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
-  const [lang, setLang] = useState<Lang>('en');
+  const [theme, setTheme] = useState<Theme>(runtime.theme);
+  const [lang, setLang] = useState<Lang>(runtime.lang);
   const [motion, setMotion] = useState(
     () => !matchMedia('(prefers-reduced-motion: reduce)').matches,
   );
 
   useEffect(() => {
     runtime.theme = theme;
-    document.body.dataset.theme = theme;
+    document.documentElement.dataset.theme = theme;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#262626' : '#FBFBFB');
+    savePreference('theme', theme);
   }, [theme]);
   useEffect(() => {
     runtime.lang = lang;
     document.documentElement.lang = lang === 'en' ? 'en' : 'ko';
+    savePreference('lang', lang);
   }, [lang]);
   useEffect(() => {
     runtime.motion = motion;
@@ -44,7 +50,7 @@ export function PrefsProvider({ children }: { children: ReactNode }) {
     const next: Theme = runtime.theme === 'dark' ? 'light' : 'dark';
     const apply = () => {
       runtime.theme = next;
-      document.body.dataset.theme = next;
+      document.documentElement.dataset.theme = next;
       setTheme(next);
     };
     if (!document.startViewTransition || !runtime.motion || !origin) return apply();
